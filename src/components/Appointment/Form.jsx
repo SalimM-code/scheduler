@@ -3,6 +3,7 @@ import Button from 'components/Button';
 import InterviewerList from 'components/InterviewerList';
 
 const Form = (props) => {
+  
   //  {student, interviewer, interviewers, onSave, onCancel}
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
@@ -41,7 +42,7 @@ const Form = (props) => {
     <section className="appointment__card-right">
       <section className="appointment__actions">
         <Button onClick={cancel} danger >Cancel</Button>
-        <Button onClick={props.onSave} confirm >Save</Button>
+        <Button onClick={() => props.onSave(student,interviewer)} confirm >Save</Button>
       </section>
     </section>
   </main>
