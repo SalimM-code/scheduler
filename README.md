@@ -27,5 +27,9 @@ npm run storybook
 # Full View
 
 ![home screen image](./images/FullView.png)
+
+# Editing page
 ![update image view](./images/Editing.png)
+
+# Delete Confirmation
 ![view for Delete page](./images/Delete.png)
