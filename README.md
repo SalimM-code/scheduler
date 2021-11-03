@@ -21,3 +21,9 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Screenshots
+
+# Full View
+
+![alt text](./images/FullView.png)
