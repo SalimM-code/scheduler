@@ -46,23 +46,3 @@ export function getInterview(state, interview) {
     };
   }
 }
-
-export function updateSpotsForDay(days, appointments, day) {
-  let spotsRemaining = 0;
-  days.forEach((element, index) => {
-    if (element.name === day) {
-      element.appointments.forEach((microElement) => {
-        for (let key in appointments) {
-          if (key === microElement) {
-            if (appointments[key].interview === null) {
-              spotsRemaining++;
-            }
-          }
-        }
-      });
-      element.spots = spotsRemaining;
-      days[index] = element;
-    }
-  });
-  return days;
-}

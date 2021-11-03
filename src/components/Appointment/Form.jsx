@@ -19,6 +19,7 @@ const Form = (props) => {
     reset()
     props.onCancel()
   }
+  
 // Form Validation
 function validate() {
   if(student === '') {
