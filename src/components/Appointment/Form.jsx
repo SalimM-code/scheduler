@@ -25,7 +25,13 @@ function validate() {
   if(student === '') {
     setError('student name cannot be blank')
     return
-  }  
+  }
+
+  if(!interviewer) {
+    setError('Interviewer cannot be blank')
+    return
+  }
+  
   setError(null)
   props.onSave(student, interviewer)
 }
