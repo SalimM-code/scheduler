@@ -7,24 +7,15 @@ import { getInterview } from "helpers/selectors";
 import { getInterviewersForDay } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
-
 export default function Application(props) {
-  const {
-    state,
-    setDay,
-    bookInterview,
-    cancelInterview,
-    spots
-  } = useApplicationData();
-
-
+  const { state, setDay, bookInterview, cancelInterview } =
+    useApplicationData();
 
   const appointments = getAppointmentsForDay(state, state.day);
   const interviewers = getInterviewersForDay(state, state.day);
 
   const schedule = appointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
-
 
     return (
       <Appointment
@@ -59,7 +50,12 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {schedule}
-        <Appointment key="last" time="5pm" bookInterview={bookInterview} cancelInterview={cancelInterview}/>
+        <Appointment
+          key="last"
+          time="5pm"
+          bookInterview={bookInterview}
+          cancelInterview={cancelInterview}
+        />
       </section>
     </main>
   );
